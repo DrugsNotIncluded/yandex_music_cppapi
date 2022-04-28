@@ -1,8 +1,9 @@
 include(FetchContent)
 cmake_minimum_required(VERSION 3.12)
 project(ymapi)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CXX_STANDARD 20)
+
+add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_library(ymapi STATIC)
@@ -40,6 +41,6 @@ if(NOT cpr_POPULATED)
 endif()
 
 	
-target_link_libraries( yandex_music_client PRIVATE nlohmann_json::nlohmann_json)
-target_link_libraries( yandex_music_client PRIVATE cpr::cpr)
-target_link_libraries( yandex_music_client PRIVATE fmt::fmt)
+target_link_libraries( ymapi PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries( ymapi PRIVATE cpr::cpr)
+target_link_libraries( ymapi PRIVATE fmt::fmt)
