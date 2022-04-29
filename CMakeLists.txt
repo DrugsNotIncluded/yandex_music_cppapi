@@ -41,6 +41,6 @@ if(NOT cpr_POPULATED)
 endif()
 
 	
-target_link_libraries( ymapi PRIVATE nlohmann_json::nlohmann_json)
-target_link_libraries( ymapi PRIVATE cpr::cpr)
-target_link_libraries( ymapi PRIVATE fmt::fmt)
+target_link_libraries( ymapi PUBLIC nlohmann_json::nlohmann_json)
+target_link_libraries( ymapi PUBLIC cpr::cpr)
+target_link_libraries( ymapi PUBLIC fmt::fmt)
