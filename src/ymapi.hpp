@@ -15,4 +15,4 @@ public:
 	future_json async_track_supplement(int track_id);
 	future_json async_track_similar(int track_id);
 	future_json_list async_tracks_download_info(json tracks_base_info);
-}
+};
