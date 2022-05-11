@@ -6,11 +6,13 @@ add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(ymapi SHARED)
-file(GLOB YMAPI_SOURCES "src/*.cpp")
-target_sources(ymapi PRIVATE "${YMAPI_SOURCES}")
-target_include_directories(ymapi PUBLIC src)
-
+add_library(ymapi SHARED
+  src/types.hpp
+  utils.cpp
+  utils.hpp
+  ymapi.cpp
+  ymapi.hpp
+)
 #-----------------------------------------------------------------------------
 FetchContent_Declare(
   cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
@@ -40,7 +42,7 @@ if(NOT cpr_POPULATED)
   add_subdirectory(${cpr_SOURCE_DIR} ${cpr_BINARY_DIR})
 endif()
 
-	
+# Link nlohmann json, cpr, fmt	
 target_link_libraries( ymapi PUBLIC nlohmann_json::nlohmann_json)
 target_link_libraries( ymapi PUBLIC cpr::cpr)
 target_link_libraries( ymapi PUBLIC fmt::fmt)
