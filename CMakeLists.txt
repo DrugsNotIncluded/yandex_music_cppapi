@@ -1,12 +1,12 @@
 include(FetchContent)
 cmake_minimum_required(VERSION 3.12)
-project(ymapi)
+project(ymcppapi)
 
 add_definitions(-DCMAKE_EXPORT_COMPILE_COMMANDS=ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(ymapi SHARED
+add_library(ymcppapi SHARED
   src/types.hpp
   src/utils.cpp
   src/utils.hpp
@@ -43,6 +43,6 @@ if(NOT cpr_POPULATED)
 endif()
 
 # Link nlohmann json, cpr, fmt	
-target_link_libraries( ymapi PUBLIC nlohmann_json::nlohmann_json)
-target_link_libraries( ymapi PUBLIC cpr::cpr)
-target_link_libraries( ymapi PUBLIC fmt::fmt)
+target_link_libraries( ymcppapi PUBLIC nlohmann_json::nlohmann_json)
+target_link_libraries( ymcppapi PUBLIC cpr::cpr)
+target_link_libraries( ymcppapi PUBLIC fmt::fmt)
