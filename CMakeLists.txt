@@ -8,10 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_library(ymapi SHARED
   src/types.hpp
-  utils.cpp
-  utils.hpp
-  ymapi.cpp
-  ymapi.hpp
+  src/utils.cpp
+  src/utils.hpp
+  src/ymapi.cpp
+  src/ymapi.hpp
 )
 #-----------------------------------------------------------------------------
 FetchContent_Declare(
