@@ -13,6 +13,11 @@ add_library(ymcppapi SHARED
   src/ymapi.cpp
   src/ymapi.hpp
 )
+
+target_include_directories(ymcppapi PUBLIC
+  "<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
+  "<INSTALL_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
+)
 #-----------------------------------------------------------------------------
 FetchContent_Declare(
   cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
