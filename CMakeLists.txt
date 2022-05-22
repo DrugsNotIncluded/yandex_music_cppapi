@@ -7,16 +7,16 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_library(ymcppapi STATIC
-  src/types.hpp
-  src/utils.cpp
-  src/utils.hpp
-  src/ymapi.cpp
-  src/ymapi.hpp
+  ymcppapi/types.hpp
+  ymcppapi/utils.cpp
+  ymcppapi/utils.hpp
+  ymcppapi/ymapi.cpp
+  ymcppapi/ymapi.hpp
 )
 
 target_include_directories(ymcppapi PUBLIC
-  "<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
-  "<INSTALL_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
+  "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
+  "$<INSTALL_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
 )
 
 execute_process(
