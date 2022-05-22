@@ -1,10 +1,11 @@
 ### Add to project:
 ```cmake
-add_subdirectory(ymapi)
-target_include_directories("${PROJECT_NAME}" PRIVATE "ymapi")
+add_subdirectory(ymcppapi)
+target_link_libraries("${PROJECT_NAME}" ymcppapi)
+target_include_directories("${PROJECT_NAME}" PRIVATE "ymacppapi_INCLUDE_DIRS")
 ```
 
 ### Include:
 ```cpp
-#include <ymapi/ymapi.hpp>
+#include <ymcppapi/ymapi.hpp>
 ```
