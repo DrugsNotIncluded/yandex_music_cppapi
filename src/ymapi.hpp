@@ -1,3 +1,7 @@
+#ifndef YMAPI_H
+#define YMAPI_H
+#endif
+
 #include <cpr/cpr.h>
 #include "types.hpp"
 #include "utils.hpp"

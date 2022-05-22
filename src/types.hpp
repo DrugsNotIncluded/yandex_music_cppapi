@@ -1,3 +1,7 @@
+#ifndef TYPES_H
+#define TYPES_H
+#endif
+
 #include <future>
 #include <nlohmann/json.hpp>
 #include <stdlib.h>

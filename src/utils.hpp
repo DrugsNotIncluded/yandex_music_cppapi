@@ -1,3 +1,7 @@
+#ifndef UTILS_H
+#define UTILS_H
+#endif
+
 #include "cpr/cprtypes.h"
 #include "types.hpp"
 #include <cpr/cpr.h>
