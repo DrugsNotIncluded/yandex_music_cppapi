@@ -1,0 +1,9 @@
+[submodule "deps/json"]
+	path = deps/json
+	url = https://github.com/nlohmann/json
+[submodule "deps/cpr"]
+	path = deps/cpr
+	url = https://github.com/libcpr/cpr.git
+[submodule "deps/fmt"]
+	path = deps/fmt
+	url = https://github.com/fmtlib/fmt.git
