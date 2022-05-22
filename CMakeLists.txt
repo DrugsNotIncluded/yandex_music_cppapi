@@ -28,7 +28,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/deps/fmt")
 add_subdirectory("${PROJECT_SOURCE_DIR}/deps/cpr")
 add_subdirectory("${PROJECT_SOURCE_DIR}/deps/json")
 
-target_link_libraries(ymcppapi PUBLIC nlohmann_json)
+target_link_libraries(ymcppapi PUBLIC json)
 target_link_libraries(ymcppapi PUBLIC cpr)
 target_link_libraries(ymcppapi PUBLIC fmt)
 
@@ -37,8 +37,8 @@ target_include_directories(ymcppapi PUBLIC $(cpr_INCLUDE_DIRS))
 target_include_directories(ymcppapi PUBLIC $(json_INCLUDE_DIRS))
 
 if(PROJECT_IS_TOP_LEVEL)
-    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-    add_custom_target(compile_commands
+  set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+  add_custom_target(compile_commands
         WORKING_DIRECTORY ${CMAKE_BUILD_DIR}
         BYPRODUCTS ${CMAKE_SOURCE_DIR}/compile_commands.json
         COMMAND cp -f ./compile_commands.json ${CMAKE_SOURCE_DIR}/compile_commands.json
