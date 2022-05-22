@@ -15,8 +15,8 @@ add_library(ymcppapi STATIC
 )
 
 target_include_directories(ymcppapi PUBLIC
-  "<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
-  "<INSTALL_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
+  "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>"
+  "$<INSTALL_INTERFACE:${PROJECT_SOURCE_DIR}/src>"
 )
 
 execute_process(
