@@ -20,7 +20,7 @@ target_include_directories(ymcppapi PUBLIC
 )
 
 execute_process(
-  COMMAND git submodule update --init
+  COMMAND git submodule update --init --remote --merge
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
