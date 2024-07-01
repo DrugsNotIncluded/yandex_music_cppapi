@@ -26,11 +26,21 @@ int main() {
 Использование
 ---
 ## Cmake
-Without FetchContent:
+Без FetchContent:
 ```cmake
 add_subdirectory(deps/ymcppapi)
 target_link_libraries("${PROJECT_NAME}" ymcppapi)
 target_include_directories("${PROJECT_NAME}" PRIVATE "${ymcppapi_INCLUDE_DIRS}")
+```
+
+С FetchContent:
+```cmake
+FetchContent_Declare(ymcppapi
+ GIT_REPOSITORY https://github.com/DrugsNotIncluded/yandex_music_cppapi
+ GIT_TAG 50647c1 # Обязательно, иначе Cmake будет пытаться найти master ветку
+)
+FetchContent_MakeAvailable(ymcppapi)
+target_link_libraries("${PROJECT_NAME}" ymcppapi)
 ```
 
 Документация
