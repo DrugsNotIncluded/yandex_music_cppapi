@@ -39,7 +39,7 @@ target_include_directories("${PROJECT_NAME}" PRIVATE "${ymcppapi_INCLUDE_DIRS}")
 
 Использованные проекты
 ---
-* [CPR]()
-* [Nlohmann Json]()
-* [Pugixml]()
-* [fmt]() - Реализация C++20 `std::format`
+* [CPR](https://github.com/libcpr/cpr)
+* [Nlohmann Json](https://github.com/nlohmann/json)
+* [Pugixml](https://github.com/zeux/pugixml)
+* [fmt](https://github.com/fmtlib/fmt) - Реализация C++20 `std::format`
