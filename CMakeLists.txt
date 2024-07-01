@@ -1,17 +1,15 @@
 include(FetchContent)
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.20)
 project(ymcppapi)
-
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_library(ymcppapi STATIC
-  ymcppapi/types.hpp
-  ymcppapi/utils.cpp
-  ymcppapi/utils.hpp
   ymcppapi/ymapi.cpp
   ymcppapi/ymapi.hpp
+  ymcppapi/ymclient.cpp
+  ymcppapi/ymclient.hpp
 )
 
 target_include_directories(ymcppapi PUBLIC
@@ -24,17 +22,20 @@ execute_process(
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_subdirectory("${PROJECT_SOURCE_DIR}/deps/fmt")
-add_subdirectory("${PROJECT_SOURCE_DIR}/deps/cpr")
-add_subdirectory("${PROJECT_SOURCE_DIR}/deps/json")
+FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git)
+FetchContent_Declare(pugixml GIT_REPOSITORY https://github.com/zeux/pugixml.git)
+FetchContent_Declare(nlohmann_json GIT_REPOSITORY https://github.com/nlohmann/json.git)
+FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/pumPCin/fmt)
 
-target_link_libraries(ymcppapi PUBLIC nlohmann_json)
-target_link_libraries(ymcppapi PUBLIC cpr)
-target_link_libraries(ymcppapi PUBLIC fmt)
+FetchContent_MakeAvailable(cpr)
+FetchContent_MakeAvailable(pugixml)
+FetchContent_MakeAvailable(nlohmann_json)
+FetchContent_MakeAvailable(fmt)
 
-target_include_directories(ymcppapi PUBLIC $(fmt_INCLUDE_DIRS))
-target_include_directories(ymcppapi PUBLIC $(cpr_INCLUDE_DIRS))
-target_include_directories(ymcppapi PUBLIC $(nlohmann_json_INCLUDE_DIRS))
+target_link_libraries(ymcppapi cpr)
+target_link_libraries(ymcppapi pugixml)
+target_link_libraries(ymcppapi nlohmann_json)
+target_link_libraries(ymcppapi fmt)
 
 if(PROJECT_IS_TOP_LEVEL)
   set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

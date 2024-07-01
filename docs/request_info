@@ -1,8 +1,0 @@
-BASE_URL = 'https://api.music.yandex.net'
-USER_AGENT = 'Yandex-Music-API'
-HEADERS = {'X-Yandex-Music-Client': 'YandexMusicAndroid/23020251'}
-LANG_LIST = 'en/uz/uk/us/ru/kk/hy'
-LANGUAGE = {'Accept-Language': lang}
-DEVICE = 'os=Python; os_version=; manufacturer=Test; model=Yandex Music API; clid=; device_id=random; uuid=random'
-YM_DEVICE = {'X-Yandex-Music-Device': device}
-ACCOUNT_STATUS = $BASE_URL/account/status
