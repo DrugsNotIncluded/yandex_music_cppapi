@@ -25,7 +25,7 @@ execute_process(
 FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git)
 FetchContent_Declare(pugixml GIT_REPOSITORY https://github.com/zeux/pugixml.git)
 FetchContent_Declare(nlohmann_json GIT_REPOSITORY https://github.com/nlohmann/json.git)
-FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/pumPCin/fmt)
+FetchContent_Declare(fmt GIT_REPOSITORY https://github.com/fmtlib/fmt.git)
 
 FetchContent_MakeAvailable(cpr)
 FetchContent_MakeAvailable(pugixml)
